@@ -1,7 +1,13 @@
 <html>
     <head>
         <script type="text/javascript">
-            
+            socket = new WebSocket('ws://localhost:8765');
+            socket.onopen = function() {
+                socket.send('hello');
+            }
+            socket.onmessage = function(s) {
+                alert('got reply' + s);
+            }
         </script>
     </head>
 <body>
