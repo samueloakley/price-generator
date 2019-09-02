@@ -1,16 +1,18 @@
 <html>
     <head>
+        <!-- <script src="js/d3.min.js"></script>
+        <script src="js/epoch.min.js"></script> -->
         <script type="text/javascript">
             socket = new WebSocket('ws://localhost:8765');
             socket.onopen = function() {
-                socket.send('hello');
+
             }
             socket.onmessage = function(s) {
-                alert('got reply' + s);
+                console.log(s.data);
             }
         </script>
     </head>
 <body>
-
+    <!-- <div id="area" class="epoch category10" style="height: 200px;"></div> -->
 </body>
 </html>

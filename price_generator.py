@@ -2,6 +2,7 @@ import numpy as np
 import websockets
 import asyncio
 from datetime import datetime, timedelta
+import json
 
 START_PRICE = 0
 previous_price = START_PRICE
@@ -17,7 +18,10 @@ async def send_prices(websocket, path):
         price = get_next_price(previous_price, delta_t) + DRIFT
         previous_price = price
         print(price)
-        await websocket.send(str(price))
+
+        message = {'time': str(current_time), 'price': price}
+
+        await websocket.send(json.dumps(message))
         await asyncio.sleep(1)
 
 def get_next_price(p, delta_t):
