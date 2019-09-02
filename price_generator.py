@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 
 START_PRICE = 0
 previous_price = START_PRICE
-previous_time = datetime.now()
 DRIFT = 0
 
 async def send_prices(websocket, path):
     global previous_price, previous_time
+    previous_time = datetime.now()
     while True:
         current_time = datetime.now()
         delta_t = (current_time - previous_time).total_seconds()
