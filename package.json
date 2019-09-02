@@ -1,0 +1,17 @@
+{
+  "name": "price-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "epoch-charting": "^0.8.4"
+  },
+  "devDependencies": {
+    "jquery": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

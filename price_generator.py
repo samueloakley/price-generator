@@ -19,7 +19,7 @@ async def send_prices(websocket, path):
         previous_price = price
         print(price)
 
-        message = {'time': str(current_time), 'price': price}
+        message = {'time': str(current_time.timestamp()), 'price': price}
 
         await websocket.send(json.dumps(message))
         await asyncio.sleep(1)
